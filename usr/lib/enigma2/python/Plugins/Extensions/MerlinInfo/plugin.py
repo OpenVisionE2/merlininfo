@@ -308,11 +308,11 @@ class merlinInfo(Screen):
         def createCamdNameSkinpart(self, x, y, w, h, fs, center = False):
                 if center:
                         skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" valign="center" halign="center" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#04000e">
-                                     <convert type="CamdRAED">Camd</convert>
+                                     <convert type="VisionCamInfo">Camd</convert>
                                   </widget> """ % (x,y,w,h,fs)
                 else:
                         skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" halign="left" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#0e1018">
-                                     <convert type="CamdRAED">Camd</convert>
+                                     <convert type="VisionCamInfo">Camd</convert>
                                   </widget>""" % (x,y,w,h,fs)
                 return skin
 
