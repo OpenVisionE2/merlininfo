@@ -34,7 +34,6 @@
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.ServiceInfo import ServiceInfo, to_unsigned
-from Screens.MessageBox import MessageBox
 from Screens.InfoBar import InfoBar, MoviePlayer
 from Screens.HelpMenu import HelpableScreen
 from Components.Sources.List import List
@@ -44,17 +43,14 @@ from Components.Label import Label
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
 from Components.ProgressBar import ProgressBar
-from Components.config import config, getConfigListEntry, ConfigText, ConfigClock, ConfigSelection, ConfigSubsection
+from Components.config import config, getConfigListEntry, ConfigSubsection
 from Components.ConfigList import ConfigListScreen
-from Components.config import ConfigInteger
 from Components.config import ConfigOnOff
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_PLUGIN, fileExists
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_PLUGIN
 from Tools.Transponder import ConvertToHumanReadable
 from enigma import eListboxPythonMultiContent, eListbox, gFont, eTimer, getDesktop, iServiceInformation
 #from bitratecalc import eBitrateCalculator
 from os import listdir, popen, error as os_error
-from Components.Converter.Converter import Converter
-from Components.Element import cached
 import os
 
 config.plugins.MerlinInfo = ConfigSubsection()
