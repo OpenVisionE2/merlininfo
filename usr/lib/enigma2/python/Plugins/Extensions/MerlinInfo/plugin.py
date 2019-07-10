@@ -153,13 +153,15 @@ class merlinInfo(Screen):
                 skin += """<widget render="Label" source="ServiceInfos" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" transparent="1" zPosition="2"/>""" % (x,y,w,h*4,fs-2)
 
                 y += h*4
-                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" noWrap="1" valign="center" zPosition="2">""" % (x,y,w,h,fs+2)
-                skin += """      <convert type="ServiceInfo">Video: %VPID   Audio: %APID</convert>"""
+                skin += """<eLabel text="Audio Pid:" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" valign="center" zPosition="2"/>""" % (x,y,w,h,fs+2)
+                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" noWrap="1" valign="center" zPosition="2">""" % (x+160,y,w,h,fs+2)
+                skin += """      <convert type="ServiceInfo">AudioPid</convert>"""
                 skin += """</widget>"""
 
                 y += h
-                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" noWrap="1" valign="center" zPosition="2">""" % (x,y,w,h,fs+2)
-                skin += """      <convert type="ServiceInfo">Sid: %SID   Onid: %ONID</convert>"""
+                skin += """<eLabel text="Video Pid:" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" valign="center" zPosition="2"/>""" % (x,y,w,h,fs+2)
+                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" noWrap="1" valign="center" zPosition="2">""" % (x+160,y,w,h,fs+2)
+                skin += """      <convert type="ServiceInfo">VideoPid</convert>"""
                 skin += """</widget>"""
 
                 self["OrbitalPosition"] = StaticText()
@@ -310,11 +312,11 @@ class merlinInfo(Screen):
         def createCamdNameSkinpart(self, x, y, w, h, fs, center = False):
                 if center:
                         skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" valign="center" halign="center" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#04000e">
-                                     <convert type="ExtremeInfo">CamName</convert>
+                                     <convert type="CamdRAED">Camd</convert>
                                   </widget> """ % (x,y,w,h,fs)
                 else:
                         skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" halign="left" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#0e1018">
-                                     <convert type="ExtremeInfo">CamName</convert>
+                                     <convert type="CamdRAED">Camd</convert>
                                   </widget>""" % (x,y,w,h,fs)
                 return skin
 
