@@ -667,9 +667,9 @@ class hotkeyConfigScreen(Screen, ConfigListScreen):
         skin = """
                 <screen position="center,center" size="420,160" title="Merlin Info Setup" >
                         <widget name="config" position="10,10" size="400,100" scrollbarMode="showOnDemand" />
-                        <ePixmap name="ButtonRed" pixmap="skin_default/buttons/red.png" position="0,120" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+                        <ePixmap name="ButtonRed" pixmap="buttons/red.png" position="0,120" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
                         <widget render="Label" source= "ButtonRedtext" position="0,120" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
-                        <ePixmap name="ButtonGreen" pixmap="skin_default/buttons/green.png" position="140,120" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+                        <ePixmap name="ButtonGreen" pixmap="buttons/green.png" position="140,120" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
                         <widget render="Label" source= "ButtonGreentext" position="140,120" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
                 </screen>"""
 
