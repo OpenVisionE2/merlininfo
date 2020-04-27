@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 #
 #  MerlinInfo E2
 #
@@ -563,7 +564,7 @@ class merlinInfo(Screen):
                                                 break
                         fd.close()
                 except os_error, err:
-                        print "[Merlin Info] popen os.error:", err
+                        print("[Merlin Info] popen os.error:", err)
                         freeflash += "popen error"
                 self["sysInfo"].setText(loadavg + "\n" + memfree + "\n" +freeflash)
 
@@ -588,7 +589,7 @@ class merlinInfo(Screen):
                                         hddTemp = "Harddisk Temperature: %d °C" % int(fread[9])
                                 fd.close()
                         except os_error, err:
-                                print "[Merlin Info] popen os.error:", err
+                                print("[Merlin Info] popen os.error:", err)
                                 hddTemp = "Harddisk Temperature: popen error"
                 self["hddTemp"].setText(hddTemp)
 
