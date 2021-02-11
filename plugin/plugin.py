@@ -611,8 +611,7 @@ class merlinInfo(Screen):
                 cntFiles = 0
 
                 # info files einlesen...
-                files = listdir("/tmp")
-                files.sort()
+                files = sorted(listdir("/tmp"))
                 # in ecm.info und ecm0.info ist der gleiche Inhalt...
                 if "ecm.info" in files and "ecm0.info" in files:
                         files.remove("ecm.info")
