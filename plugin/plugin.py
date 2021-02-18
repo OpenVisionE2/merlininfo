@@ -56,8 +56,8 @@ from os import listdir, popen, error as os_error
 import os
 
 config.plugins.MerlinInfo = ConfigSubsection()
-config.plugins.MerlinInfo.Hotkey = ConfigOnOff(default = True)
-config.plugins.MerlinInfo.ExMenu = ConfigOnOff(default = True)
+config.plugins.MerlinInfo.Hotkey = ConfigOnOff(default=True)
+config.plugins.MerlinInfo.ExMenu = ConfigOnOff(default=True)
 
 mysession = None
 baseHelpableScreen__init__ = None
@@ -69,7 +69,7 @@ def autostart(reason, **kwargs):
         if baseHelpableScreen__init__ is None:
                 baseHelpableScreen__init__ = HelpableScreen.__init__
         HelpableScreen.__init__ = HelpableScreen__init__
-        config.plugins.MerlinInfo.Hotkey.addNotifier(hotkeyChanged, initial_call = False)
+        config.plugins.MerlinInfo.Hotkey.addNotifier(hotkeyChanged, initial_call=False)
 
 def HelpableScreen__init__(self):
         if (isinstance(self, InfoBar) or isinstance(self, MoviePlayer)) and config.plugins.MerlinInfo.Hotkey.value:
@@ -80,7 +80,7 @@ def HelpableScreen__init__(self):
         else:
                 baseHelpableScreen__init__(self)
 
-def hotkeyChanged(configElement = None):
+def hotkeyChanged(configElement=None):
         from Screens.InfoBar import InfoBar
         if configElement.value:
                 InfoBar.instance["helpActions"].actions["displayHelp"] = showMerlinInfo
@@ -94,10 +94,10 @@ def main(session,**kwargs):
         session.open(merlinInfo)
 
 def Plugins(**kwargs):
-        list = [PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart)] 
-        list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where = PluginDescriptor.WHERE_PLUGINMENU, fnc=main))
+        list = [PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)] 
+        list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main))
         if config.plugins.MerlinInfo.ExMenu.value:
-                list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
+                list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
         return list
 
 RT_HALIGN_LEFT = 0
@@ -110,7 +110,7 @@ TYPE_SLIDER = 4
 from Components.GUIComponent import GUIComponent
 
 class myInfoList(GUIComponent):
-        def __init__(self, source, fontSize = 18):
+        def __init__(self, source, fontSize=18):
                 GUIComponent.__init__(self)
                 self.l = eListboxPythonMultiContent()
                 self.list = source
@@ -307,7 +307,7 @@ class merlinInfo(Screen):
                                 self["plabel%d" % i] = StaticText()
                 return skin
 
-        def createCamdNameSkinpart(self, x, y, w, h, fs, center = False):
+        def createCamdNameSkinpart(self, x, y, w, h, fs, center=False):
                 if center:
                         skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" valign="center" halign="center" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#04000e">
                                      <convert type="VisionCamInfo">Camd</convert>
@@ -351,7 +351,7 @@ class merlinInfo(Screen):
                 self["hddTemp"] = Label("")
                 return skin
 
-        def __init__(self, session, args = 0):
+        def __init__(self, session, args=0):
                 sz_w = getDesktop(0).size().width()
                 if sz_w == 1920:
                         part  = """<screen title="Merlin Info" flags="wfNoBorder" position="0,0" size="1920,1080" backgroundColor="#0e1018">"""
@@ -686,7 +686,7 @@ class hotkeyConfigScreen(Screen, ConfigListScreen):
                 list = []
                 list.append(getConfigListEntry(_("Hotkey HELP"), config.plugins.MerlinInfo.Hotkey))
                 list.append(getConfigListEntry(_("Show Plugin in Extensions Menu"), config.plugins.MerlinInfo.ExMenu))
-                ConfigListScreen.__init__(self, list, session = session)
+                ConfigListScreen.__init__(self, list, session=session)
 
                 self["ButtonRedtext"] = StaticText(_("return"))
                 self["ButtonGreentext"] = StaticText(_("save"))
