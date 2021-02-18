@@ -90,7 +90,7 @@ def hotkeyChanged(configElement=None):
 def showMerlinInfo():
         mysession.open(merlinInfo)
 
-def main(session,**kwargs):
+def main(session, **kwargs):
         session.open(merlinInfo)
 
 def Plugins(**kwargs):
