@@ -63,6 +63,8 @@ mysession = None
 baseHelpableScreen__init__ = None
 
 # Thanks to Dr.Best for his help for Hotkey stuff...
+
+
 def autostart(reason, **kwargs):
         global mysession, baseHelpableScreen__init__
         mysession = kwargs["session"]
@@ -70,6 +72,7 @@ def autostart(reason, **kwargs):
                 baseHelpableScreen__init__ = HelpableScreen.__init__
         HelpableScreen.__init__ = HelpableScreen__init__
         config.plugins.MerlinInfo.Hotkey.addNotifier(hotkeyChanged, initial_call=False)
+
 
 def HelpableScreen__init__(self):
         if (isinstance(self, InfoBar) or isinstance(self, MoviePlayer)) and config.plugins.MerlinInfo.Hotkey.value:
@@ -80,6 +83,7 @@ def HelpableScreen__init__(self):
         else:
                 baseHelpableScreen__init__(self)
 
+
 def hotkeyChanged(configElement=None):
         from Screens.InfoBar import InfoBar
         if configElement.value:
@@ -87,11 +91,14 @@ def hotkeyChanged(configElement=None):
         else:
                 InfoBar.instance["helpActions"].actions["displayHelp"] = InfoBar.instance.showHelp
 
+
 def showMerlinInfo():
         mysession.open(merlinInfo)
 
+
 def main(session, **kwargs):
         session.open(merlinInfo)
+
 
 def Plugins(**kwargs):
         list = [PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)] 
@@ -99,6 +106,7 @@ def Plugins(**kwargs):
         if config.plugins.MerlinInfo.ExMenu.value:
                 list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
         return list
+
 
 RT_HALIGN_LEFT = 0
 TYPE_TEXT = 0
@@ -108,6 +116,7 @@ TYPE_VALUE_HEX_DEC = 3
 TYPE_SLIDER = 4
 
 from Components.GUIComponent import GUIComponent
+
 
 class myInfoList(GUIComponent):
         def __init__(self, source, fontSize=18):
@@ -124,6 +133,8 @@ class myInfoList(GUIComponent):
                 self.instance.setContent(self.l)
 
 # mainwindow...
+
+
 class merlinInfo(Screen):
         def createVideoPictureSkinpart(self, x, y, w, h):
                 skin = """<widget source="session.VideoPicture" position="%d,%d" render="Pig" size="%d,%d" zPosition="0" backgroundColor="#FF000000"/>""" % (x, y, w, h)
@@ -667,6 +678,7 @@ class merlinInfo(Screen):
 
         def HotkeyDlg(self):
                 self.session.open(hotkeyConfigScreen)
+
 
 class hotkeyConfigScreen(Screen, ConfigListScreen):
         skin = """
