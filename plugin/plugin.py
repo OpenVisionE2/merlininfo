@@ -492,7 +492,7 @@ class merlinInfo(Screen):
                 tlist = [ ]
                 for item in FEData:
                         if item[1] is None:
-                                continue;
+                                continue
                         b = item[1]
                         valueType = item[2]
                         if not isinstance(b, str):
@@ -640,15 +640,19 @@ class merlinInfo(Screen):
                         self["infoFile%d" % i].setText(self.fileData[self.showFile+i][1])
 
         def left(self):
-                if self.loading: return
+                if self.loading:
+                        return
                 self.showFile -= 2
-                if self.showFile < 0: self.showFile = 4
+                if self.showFile < 0:
+                        self.showFile = 4
                 self.refreshInfoFiles()
 
         def right(self):
-                if self.loading: return
+                if self.loading:
+                        return
                 self.showFile += 2
-                if self.showFile > 4: self.showFile = 0
+                if self.showFile > 4:
+                        self.showFile = 0
                 self.refreshInfoFiles()
 
         def nextBouquet(self):
