@@ -4,7 +4,7 @@ from distutils.core import setup
 import setup_translate
 
 pkg = 'Extensions.merlininfo'
-setup (name='enigma2-plugin-extensions-merlininfo',
+setup(name='enigma2-plugin-extensions-merlininfo',
        version='2.1',
        description='Plugin to show useful information in enigma2.',
        packages=[pkg],

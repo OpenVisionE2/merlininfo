@@ -73,7 +73,7 @@ def autostart(reason, **kwargs):
 
 def HelpableScreen__init__(self):
         if (isinstance(self, InfoBar) or isinstance(self, MoviePlayer)) and config.plugins.MerlinInfo.Hotkey.value:
-                self["helpActions"] = ActionMap( [ "HelpActions" ],
+                self["helpActions"] = ActionMap(["HelpActions"],
                         {
                                 "displayHelp": showMerlinInfo,
                         })
@@ -489,7 +489,7 @@ class merlinInfo(Screen):
                 myServiceInfo = ServiceInfo(self.session, self.session.nav.getCurrentlyPlayingServiceReference())
                 FEData = myServiceInfo.getFEData(frontendDataOrg)
 
-                tlist = [ ]
+                tlist = []
                 for item in FEData:
                         if item[1] is None:
                                 continue
