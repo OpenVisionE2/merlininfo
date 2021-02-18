@@ -19,8 +19,8 @@ from __future__ import print_function
 #
 #  This plugin is inspirated by Vali's plugin Sherlock
 #
-#  This plugin is licensed under the Creative Commons 
-#  Attribution-NonCommercial-ShareAlike 3.0 Unported 
+#  This plugin is licensed under the Creative Commons
+#  Attribution-NonCommercial-ShareAlike 3.0 Unported
 #  License. To view a copy of this license, visit
 #  http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 #  Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
@@ -29,7 +29,7 @@ from __future__ import print_function
 #  is licensed by Dream Multimedia GmbH.
 
 #  This plugin is NOT free software. It is open source, you are allowed to
-#  modify it (if you keep the license), but it may not be commercially 
+#  modify it (if you keep the license), but it may not be commercially
 #  distributed other than under the conditions noted above.
 #
 
@@ -101,7 +101,7 @@ def main(session, **kwargs):
 
 
 def Plugins(**kwargs):
-        list = [PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)] 
+        list = [PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)]
         list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main))
         if config.plugins.MerlinInfo.ExMenu.value:
                 list.append(PluginDescriptor(name="Merlin Info", description=_("Merlin Information..."), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
@@ -545,7 +545,7 @@ class merlinInfo(Screen):
         #        else:
         #                self.videoBitrate = None
 
-        #def getAudioBitrateData(self, value, status): 
+        #def getAudioBitrateData(self, value, status):
         #        if status:
         #                self["AudioBitrate"].text = "Audio: %d kbit/s" % value;
         #        else:
