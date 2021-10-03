@@ -48,7 +48,7 @@ from Components.ProgressBar import ProgressBar
 from Components.config import config, getConfigListEntry, ConfigSubsection
 from Components.ConfigList import ConfigListScreen
 from Components.config import ConfigOnOff
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_PLUGIN
+from Tools.Directories import resolveFilename, SCOPE_PLUGIN
 from Tools.Transponder import ConvertToHumanReadable
 from enigma import eListboxPythonMultiContent, eListbox, gFont, eTimer, getDesktop, iServiceInformation
 #from bitratecalc import eBitrateCalculator
@@ -201,7 +201,7 @@ class merlinInfo(Screen):
                 skin += """     <convert type="FrontendInfo">SNRdB</convert>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png/ico_bar_snr%d.png" % png)
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_bar_snr%d.png" % png)
                 w = 230 + png * 30
                 h = 10 + png * 10
                 y += fs + 2
@@ -231,7 +231,7 @@ class merlinInfo(Screen):
                 skin += """     <convert type="FrontendInfo">SNRdB</convert>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png2/ico_bar_snr1.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_bar_snr1.png")
                 w = 230 + png * 30
                 h = 10 + png * 10
                 y += fs + 2
@@ -241,27 +241,27 @@ class merlinInfo(Screen):
                 return skin
 
         def createInfoIconsSkinpart(self, x, y, w):
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png/ico_format_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_format_on.png")
                 skin = """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="27,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsWidescreen</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png/ico_txt_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_txt_on.png")
                 x += w
                 skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="30,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">HasTelext</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png/ico_crypt_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_crypt_on.png")
                 x += w
                 skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="24,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsCrypted</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png/ico_dolby_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_dolby_on.png")
                 x += w
                 skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="46,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsMultichannel</convert>"""
@@ -270,27 +270,27 @@ class merlinInfo(Screen):
                 return skin
 
         def createInfoIconsSkinpartFHD(self, x, y, w):
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png2/ico_format_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_format_on.png")
                 skin = """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="50,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsWidescreen</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png2/ico_txt_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_txt_on.png")
                 x += w
                 skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="60,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">HasTelext</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png2/ico_crypt_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_crypt_on.png")
                 x += w
                 skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="40,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsCrypted</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
-                pixmap = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinInfo/png2/ico_dolby_on.png")
+                pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_dolby_on.png")
                 x += w
                 skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="80,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsMultichannel</convert>"""
