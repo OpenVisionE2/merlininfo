@@ -139,35 +139,35 @@ class merlinInfo(Screen):
                 return skin
 
         def createSysInfoSkinpart(self, x, y, w, h, fs):
-                skin = """<widget render="Label" source="sysInfo" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" transparent="1" zPosition="3"/>""" % (x, y, w, h, fs)
+                skin = """<widget render="Label" source="sysInfo" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" transparent="1" zPosition="3"/>""" % (x, y, w, h, fs)
                 self["sysInfo"] = StaticText()
                 return skin
 
         def createServiceInfoSkinpart(self, x, y, w, h, fs):
-                skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#04000e" halign="left" noWrap="1" transparent="1" valign="top" zPosition="2">""" % (x, y, w, h, fs + 2)
+                skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#04000e" horizontalAlignment="left" noWrap="1" transparent="1" verticalAlignment="top" zPosition="2">""" % (x, y, w, h, fs + 2)
                 skin += """     <convert type="ServiceName">Name</convert>"""
                 skin += """</widget>"""
 
                 y += h + 2
-                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" noWrap="1" transparent="1" zPosition="2">""" % (x, y, w, h, fs)
+                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" noWrap="1" transparent="1" zPosition="2">""" % (x, y, w, h, fs)
                 skin += """     <convert type="ServiceName">Provider</convert>"""
                 skin += """</widget>"""
 
                 y += h
-                skin += """<widget render="Label" source="OrbitalPosition" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" noWrap="1" transparent="1" zPosition="2"/>""" % (x, y, w, h, fs - 4)
+                skin += """<widget render="Label" source="OrbitalPosition" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" noWrap="1" transparent="1" zPosition="2"/>""" % (x, y, w, h, fs - 4)
 
                 y += h + 4
-                skin += """<widget render="Label" source="ServiceInfos" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" transparent="1" zPosition="2"/>""" % (x, y, w, h * 4, fs - 2)
+                skin += """<widget render="Label" source="ServiceInfos" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" transparent="1" zPosition="2"/>""" % (x, y, w, h * 4, fs - 2)
 
                 y += h * 4
-                skin += """<eLabel text="Audio Pid:" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" valign="center" zPosition="2"/>""" % (x, y, w, h, fs + 2)
-                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" noWrap="1" valign="center" zPosition="2">""" % (x + 160, y, w, h, fs + 2)
+                skin += """<eLabel text="Audio Pid:" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" horizontalAlignment="left" verticalAlignment="center" zPosition="2"/>""" % (x, y, w, h, fs + 2)
+                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" horizontalAlignment="left" noWrap="1" verticalAlignment="center" zPosition="2">""" % (x + 160, y, w, h, fs + 2)
                 skin += """      <convert type="ServiceInfo">AudioPid</convert>"""
                 skin += """</widget>"""
 
                 y += h
-                skin += """<eLabel text="Video Pid:" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" valign="center" zPosition="2"/>""" % (x, y, w, h, fs + 2)
-                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" halign="left" noWrap="1" valign="center" zPosition="2">""" % (x + 160, y, w, h, fs + 2)
+                skin += """<eLabel text="Video Pid:" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" horizontalAlignment="left" verticalAlignment="center" zPosition="2"/>""" % (x, y, w, h, fs + 2)
+                skin += """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" transparent="1" horizontalAlignment="left" noWrap="1" verticalAlignment="center" zPosition="2">""" % (x + 160, y, w, h, fs + 2)
                 skin += """      <convert type="ServiceInfo">VideoPid</convert>"""
                 skin += """</widget>"""
 
@@ -181,21 +181,21 @@ class merlinInfo(Screen):
         def createFrontendInfoSkinpart(self, x, y, fs, png):
                 w = 80 + png * 10
                 h = fs + 2
-                skin = """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#04000e" halign="left" transparent="1" zPosition="2">""" % (x, y, w, h, fs)
+                skin = """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#04000e" horizontalAlignment="left" transparent="1" zPosition="2">""" % (x, y, w, h, fs)
                 skin += """     <convert type="FrontendInfo">BER</convert>"""
                 skin += """</widget>"""
 
                 x1 = x + 80 + png * 10
                 w = 50 + png * 10
                 h = fs + 2
-                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
+                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
                 skin += """     <convert type="FrontendInfo">SNR</convert>"""
                 skin += """</widget>"""
 
                 x1 = x + 130 + png * 20
                 w = 100 + png * 10
                 h = fs + 2
-                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="right" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
+                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="right" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
                 skin += """     <convert type="FrontendInfo">SNRdB</convert>"""
                 skin += """</widget>"""
 
@@ -211,21 +211,21 @@ class merlinInfo(Screen):
         def createFrontendInfoSkinpartFHD(self, x, y, fs, png):
                 w = 80 + png * 10
                 h = fs + 2
-                skin = """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#04000e" halign="left" transparent="1" zPosition="2">""" % (x, y, w, h, fs)
+                skin = """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#04000e" horizontalAlignment="left" transparent="1" zPosition="2">""" % (x, y, w, h, fs)
                 skin += """     <convert type="FrontendInfo">BER</convert>"""
                 skin += """</widget>"""
 
                 x1 = x + 80 + png * 10
                 w = 50 + png * 10
                 h = fs + 2
-                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
+                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
                 skin += """     <convert type="FrontendInfo">SNR</convert>"""
                 skin += """</widget>"""
 
                 x1 = x + 130 + png * 20
                 w = 100 + png * 10
                 h = fs + 2
-                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="right" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
+                skin += """<widget source="session.FrontendStatus" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="right" transparent="1" zPosition="2">""" % (x1, y, w, h, fs)
                 skin += """     <convert type="FrontendInfo">SNRdB</convert>"""
                 skin += """</widget>"""
 
@@ -240,28 +240,28 @@ class merlinInfo(Screen):
 
         def createInfoIconsSkinpart(self, x, y, w):
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_format_on.png")
-                skin = """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="27,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin = """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="27,20" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsWidescreen</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_txt_on.png")
                 x += w
-                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="30,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="30,20" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">HasTelext</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_crypt_on.png")
                 x += w
-                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="24,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="24,20" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsCrypted</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png/ico_dolby_on.png")
                 x += w
-                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="46,20" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="46,20" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsMultichannel</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
@@ -269,28 +269,28 @@ class merlinInfo(Screen):
 
         def createInfoIconsSkinpartFHD(self, x, y, w):
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_format_on.png")
-                skin = """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="50,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin = """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="50,40" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsWidescreen</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_txt_on.png")
                 x += w
-                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="60,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="60,40" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">HasTelext</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_crypt_on.png")
                 x += w
-                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="40,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="40,40" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsCrypted</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
 
                 pixmap = resolveFilename(SCOPE_PLUGIN, "Extensions/MerlinInfo/png2/ico_dolby_on.png")
                 x += w
-                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="80,40" alphatest="on" zPosition="2">""" % (pixmap, x, y)
+                skin += """<widget source="session.CurrentService" pixmap="%s" position="%d,%d" render="Pixmap" size="80,40" alphaTest="on" zPosition="2">""" % (pixmap, x, y)
                 skin += """     <convert type="ServiceInfo">IsMultichannel</convert>"""
                 skin += """     <convert type="ConditionalShowHide"/>"""
                 skin += """</widget>"""
@@ -301,16 +301,16 @@ class merlinInfo(Screen):
 
                 skin = ""
                 if pcnt < 2:
-                        skin += """<widget render="Label" source="plabel0" position="%d,%d" size="%d,%d" valign="center" halign="center" zPosition="2" transparent="1" foregroundColor="white" font="Regular;%d"/>""" % (x, y, w * 8, h, fs)
+                        skin += """<widget render="Label" source="plabel0" position="%d,%d" size="%d,%d" verticalAlignment="center" horizontalAlignment="center" zPosition="2" transparent="1" foregroundColor="white" font="Regular;%d"/>""" % (x, y, w * 8, h, fs)
                         if pcnt == 0:
                                 self["plabel0"] = StaticText(_("No Mainboard Temperature Sensor avaiable..."))
                         else:
                                 self["plabel0"] = StaticText()
                 else:
                         for i in range(pcnt):
-                                skin += """<eLabel text="S%s" position="%d,%d" size="%d,%d" font="Regular;%d" backgroundColor="#04000e" halign="center" valign="center" zPosition="2"/>\n""" % (str(i), x, y - (fs + 2), w, fs + 2, fs)
+                                skin += """<eLabel text="S%s" position="%d,%d" size="%d,%d" font="Regular;%d" backgroundColor="#04000e" horizontalAlignment="center" verticalAlignment="center" zPosition="2"/>\n""" % (str(i), x, y - (fs + 2), w, fs + 2, fs)
                                 skin += """<widget name="progress%d" position="%d,%d" size="%d,%d" transparent="1" borderColor="#404040" borderWidth="1" orientation="orBottomToTop" zPosition="2" />\n""" % (i, x, y, w, h)
-                                skin += """<widget render="Label" source="plabel%d" position="%d,%d" size="%d,%d" valign="center" halign="center" zPosition="3" transparent="1" foregroundColor="black" backgroundColor="white" font="Regular;%d"/>""" % (i, x, y + h - (fs + 2), w, fs + 2, fs)
+                                skin += """<widget render="Label" source="plabel%d" position="%d,%d" size="%d,%d" verticalAlignment="center" horizontalAlignment="center" zPosition="3" transparent="1" foregroundColor="black" backgroundColor="white" font="Regular;%d"/>""" % (i, x, y + h - (fs + 2), w, fs + 2, fs)
                                 x += w
                                 self["progress%d" % i] = ProgressBar()
                                 self["plabel%d" % i] = StaticText()
@@ -318,11 +318,11 @@ class merlinInfo(Screen):
 
         def createCamdNameSkinpart(self, x, y, w, h, fs, center=False):
                 if center:
-                        skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" valign="center" halign="center" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#04000e">
+                        skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" verticalAlignment="center" horizontalAlignment="center" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#04000e">
                                      <convert type="VisionCamInfo">Camd</convert>
                                   </widget> """ % (x, y, w, h, fs)
                 else:
-                        skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" halign="left" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#0e1018">
+                        skin = """<widget source="session.CurrentService" render="Label" position="%d,%d" size="%d,%d" font="Regular;%d" zPosition="2" noWrap="1" horizontalAlignment="left" foregroundColor="#00fcc000" transparent="1"  backgroundColor="#0e1018">
                                      <convert type="VisionCamInfo">Camd</convert>
                                   </widget>""" % (x, y, w, h, fs)
                 return skin
@@ -330,10 +330,10 @@ class merlinInfo(Screen):
         def createInfoFilesSkinpart(self, x, y, w, h, fs, numFiles):
                 skin = ""
                 for i in range(numFiles):
-                        skin += """<eLabel text=" " position="%d,%d" size="%d,%d" font="Regular;20" backgroundColor="#04000e" halign="center" valign="center" zPosition="1"/>\n""" % (x, y, w - 2, h)
-                        skin += """<widget render="Label" source="infoFileName%d" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#0e1018" halign="left" transparent="2" zPosition="2"/>""" % (i, x + 4, y, w - 8, fs + 6, fs + 4)
+                        skin += """<eLabel text=" " position="%d,%d" size="%d,%d" font="Regular;20" backgroundColor="#04000e" horizontalAlignment="center" verticalAlignment="center" zPosition="1"/>\n""" % (x, y, w - 2, h)
+                        skin += """<widget render="Label" source="infoFileName%d" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#00fcc000" backgroundColor="#0e1018" horizontalAlignment="left" transparent="2" zPosition="2"/>""" % (i, x + 4, y, w - 8, fs + 6, fs + 4)
                         self["infoFileName%d" % i] = StaticText()
-                        skin += """<widget render="Label" source="infoFile%d" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#0e1018" halign="left" transparent="2" zPosition="2"/>""" % (i, x + 4, y + fs + 8, w - 8, h - (fs + 8), fs)
+                        skin += """<widget render="Label" source="infoFile%d" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#0e1018" horizontalAlignment="left" transparent="2" zPosition="2"/>""" % (i, x + 4, y + fs + 8, w - 8, h - (fs + 8), fs)
                         x += w + 2
                         self["infoFile%d" % i] = StaticText()
                 return skin
@@ -342,7 +342,7 @@ class merlinInfo(Screen):
                 return """<eLabel text=" " position="%d,%d" size="%d,%d" backgroundColor="#04000e" zPosition="1"/>\n""" % (x, y, w, h)
 
         def createFrontendListSkinpart(self, x, y, w, h, w1, w2, fs):
-                skin = """<widget name="infolist" position="%d,%d" size="%d,%d" selectionDisabled="1" foregroundColor="#f0f0f0" backgroundColor="#04000e" zPosition="4"/>""" % (x, y, w, h)
+                skin = """<widget name="infolist" position="%d,%d" size="%d,%d" selection="1" foregroundColor="#f0f0f0" backgroundColor="#04000e" zPosition="4"/>""" % (x, y, w, h)
                 self["infolist"] = myInfoList([], fs)
                 # uncool: Variablen fuer die ListEntrys...
                 self.W1 = w1
@@ -351,12 +351,12 @@ class merlinInfo(Screen):
                 return skin
 
         def createHddInfoSkinpart(self, x, y, w, h, fs):
-                skin = """<widget name="hddInfo" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" halign="left" transparent="0" zPosition="4"/>""" % (x, y, w, h, fs)
+                skin = """<widget name="hddInfo" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" horizontalAlignment="left" transparent="0" zPosition="4"/>""" % (x, y, w, h, fs)
                 self["hddInfo"] = Label("")
                 return skin
 
         def createHddTempSkinpart(self, x, y, w, h, fs):
-                skin = """<widget name="hddTemp" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" valign="center" halign="left" transparent="0" zPosition="4"/>""" % (x, y, w * 8, h, fs)
+                skin = """<widget name="hddTemp" position="%d,%d" size="%d,%d" font="Regular;%d" foregroundColor="#f0f0f0" backgroundColor="#04000e" verticalAlignment="center" horizontalAlignment="left" transparent="0" zPosition="4"/>""" % (x, y, w * 8, h, fs)
                 self["hddTemp"] = Label("")
                 return skin
 
@@ -682,10 +682,10 @@ class hotkeyConfigScreen(Screen, ConfigListScreen):
         skin = """
                 <screen position="center,center" size="420,160" title="Merlin Info Setup" >
                         <widget name="config" position="10,10" size="400,100" scrollbarMode="showOnDemand" />
-                        <ePixmap name="ButtonRed" pixmap="buttons/red.png" position="0,120" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
-                        <widget render="Label" source= "ButtonRedtext" position="0,120" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
-                        <ePixmap name="ButtonGreen" pixmap="buttons/green.png" position="140,120" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
-                        <widget render="Label" source= "ButtonGreentext" position="140,120" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
+                        <ePixmap name="ButtonRed" pixmap="buttons/red.png" position="0,120" size="140,40" zPosition="4" transparent="1" alphaTest="on"/>
+                        <widget render="Label" source= "ButtonRedtext" position="0,120" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
+                        <ePixmap name="ButtonGreen" pixmap="buttons/green.png" position="140,120" size="140,40" zPosition="4" transparent="1" alphaTest="on"/>
+                        <widget render="Label" source= "ButtonGreentext" position="140,120" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
                 </screen>"""
 
         def __init__(self, session):
